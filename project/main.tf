@@ -14,7 +14,7 @@ module "my_vpc_module" {
     source = "./modules/vpc"
     project = var.project           
     vpc_cidr = var.vpc_cidr
-    env = var.env
+    env = var.environment
     pvt_sub_cidr = var.private_cidr 
     pub_sub_cidr =var.public_cidr 
 }
