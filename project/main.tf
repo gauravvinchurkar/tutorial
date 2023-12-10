@@ -4,6 +4,7 @@ terraform {
     region =
     key = 
   }
+  
     
 }
 provider "aws" {
