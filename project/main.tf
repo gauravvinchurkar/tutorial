@@ -34,13 +34,14 @@ ingress {
     to_port = 443
     cidr_blocks =["0.0.0.0/0"]
      }
-     depends_on = [ module.my_vpc_module ]
+     
 egress {
     protocol = "-1" 
     from_port = 0
     to_port = 0
     cidr_blocks =["0.0.0.0/0"]
  }
+ depends_on = [ module.my_vpc_module ]
 
 }
 
