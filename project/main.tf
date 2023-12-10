@@ -20,7 +20,7 @@ module "my_vpc_module" {
 }
 resource "aws_security_group" "my_sg" {
   name = "${var.project}-sg"
-  vpc_id = "aws_vpc.my_vpc.id"
+  vpc_id = module.my_vpc_module.vpc_id
   description = "allow hppt and https service"
 ingress {
     protocol = "tcp" 
@@ -40,7 +40,8 @@ egress {
     from_port = 0
     to_port = 0
     cidr_blocks =["0.0.0.0/0"]
-     }
+ }
+
 }
 
 module "my_instance" {
