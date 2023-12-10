@@ -16,9 +16,7 @@ variable "private_cidr" {
 variable "public_cidr" {
   default = "10.10.16.0/16"
 }
-variable "count" {
-  default = 2
-}
+
 variable "image_id" {
   default = ""
 }

@@ -1,10 +1,10 @@
 terraform {
   backend "s3"{
-    bucket = 
-    region =
-    key = 
+    bucket = "terraform-bucket-11111"
+    region = "us-east-1"
+    key = "terraform.tfstate"
   }
-  
+
     
 }
 provider "aws" {
@@ -45,7 +45,6 @@ egress {
 
 module "my_instance" {
     source = "./modules/instance"
-    count = var.count
     image_id = var.image_id
     instance_type = var.instance_type
     key_pair = var.key_pair
