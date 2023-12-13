@@ -1,0 +1,33 @@
+apiVersion: v1
+kind: Service
+metadata: 
+  name: myapp-home
+  labels:
+    app: myapp-home
+spec:
+  type: ClusterIP
+  selector:
+    app: myapp-home
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+---
+
+apiVersion: v1
+kind: Service
+metadata: 
+  name: myapp-mobile
+  labels:
+    app: myapp-mobile
+spec:
+  type: clusterIP
+  selector:
+    app: myapp-mobile
+  ports:
+    - name: nginx
+      protocol: TCP
+      port: 80
+      targetPort: 80
+---
